@@ -213,6 +213,115 @@ const user={
     firstName:'Mohd',
     // address:{housenumber:'121'}
 }
-console.log(user?.firstName);
-console.log(user?.address?.housenumber);
+// console.log(user?.firstName);
+// console.log(user?.address?.housenumber);
 
+// 🟣
+// methods
+// function inside object
+
+// create your own method 
+function personInfo(){
+    // console.log(`person name is ${this.firstName} and age is ${this.age}`);
+}
+
+const person4 = {
+    firstName : "harsh",
+    age: 8,
+    about: personInfo
+}
+const person5 = {
+    firstName : "mohit",
+    age: 18,
+    about: personInfo
+}
+const person6 = {
+    firstName : "nitish",
+    age: 17,
+    about: personInfo
+}
+
+// person4.about();
+// person5.about();
+// person6.about();
+
+// 🔴 this and window same thing  this is global object of js u can use strict mode "use strict "
+
+// 🟣 call apply bind 
+
+
+const user1 = {
+    firstName : "Habib",
+    age: 8,   
+     about:function(hobby){
+        console.log(this.firstName, this.age,hobby);
+}
+}
+const user2 = {
+    firstName : "Khabib",
+    age: 9,
+    
+}
+// 🔴 if u use function jo aapney define bhi na kiya ho uss object then we use call(ager iskey ander kuch nahi to undifend dega o/w usi ko call karega )
+
+// user1.about.call(user1);
+// user1.about.call(user2,"Thinking");
+// 🟢user1.about.call();
+
+// 🟣 apply
+// 🟢internallyy apply bhi call ko use kerta hai parameter array mey leta hai
+function about(hobby, favretthing){
+    console.log(this.firstName, this.age, hobby, favretthing);
+}
+const user3 = {
+    firstName : "Zaid",
+    age: 8,   
+}
+const user4 = {
+    firstName : "Haris",
+    age: 9,
+    
+}
+
+// about.apply(user3, ["Thinking", "Quran-e-kareem"]);
+
+
+
+// 🟣 bind method
+// 🟢 bind return function 
+const funcofbind = about.bind(user4, "walking", "visiting");
+funcofbind();
+
+
+// 🟣 Dont do that reference store honey per undefined dega 
+myfunc=user1.about;
+myfunc();
+
+// this way correct u can use bind method
+myfunc=user1.about.bind(user1,"hi");
+myfunc();
+
+// 🔴 Arrow function ka this nahi hota don't try with arrow functon always access this with function expression 
+
+// 🟣 // arrow functions 
+
+
+const user7 = {
+    firstName : "harshit",
+    age: 8,
+    about: function(){
+        console.log(this.firstName, this.age);
+    }   
+}
+
+const user8 = {
+    firstName : "harshit",
+    age: 8,
+    about(){
+        console.log(this.firstName, this.age);
+    }   
+}
+
+
+
+user8.about();
