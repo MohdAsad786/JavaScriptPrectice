@@ -325,3 +325,122 @@ const user8 = {
 
 
 user8.about();
+
+// 🟣 
+
+const objx = {
+    key1: "value1",
+    key2: "value2"
+}
+
+// __proto__
+
+// offical ecmascript documentation 
+
+// [[prototype]]
+
+//🔴 __proto__ , [[prototype]] same thing
+
+
+
+//🔴 prototype    but it diffretnt from __proto__
+
+const objy = Object.create(objx);
+ // {} object.Create(referance) it's giving two thing to you the firstone is that empty Object {} the secondone is creating chaining or connection
+// there is one more way to create empty object
+objy.key3 = "value3";
+// obj2.key2 = "unique";
+console.log(objy);
+
+console.log(objy.__proto__); 
+//🔴__proto__ is a referance of objx
+
+// 🟣
+
+const userMethods = {
+    about : function(){
+        return `${this.firstName} is ${this.age} years old.`;
+    },
+    is18 : function(){
+        return this.age >= 18;
+    },
+    education: function(){
+        return ` your education from ${country}`;
+    }
+}
+
+function creaatUser(firstName , lastname,age,country){
+    const user=Object.create(userMethods);
+    user.firstName=firstName;
+    user.lastname=lastname;
+    user.country=country;
+    user.age=age;
+    return user;
+}
+
+const user01= creaatUser('Mohd','Asad',27,'India');
+const user02= creaatUser('Talib','Saeed',27,'India');
+console.log('about yourself' ,user01.about());
+console.log(user02);
+
+
+// 🟣 portotype
+function hello(){
+    console.log("hello world");
+}
+
+// javascript function ===> function  + object package of both
+
+// console.log(hello.name);
+
+// you can add your own properties 
+// hello.myOwnProperty = "very unique value";
+// console.log(hello.myOwnProperty);
+
+// name property ---> tells function name;
+
+// function provides more usefull properties.
+
+
+// console.log(hello.prototype); 🔴 {} free space milta hai we can add key value pair and function also
+
+// only functions provide prototype property
+
+// hello.prototype.abc = "abc";
+// hello.prototype.xyz = "xyz";
+// hello.prototype.sing = function(){
+//     return "lalalla";
+// };
+// console.log(hello.prototype.sing());
+
+function createUser(firstName , lastname,age,country){
+    const user=Object.create(prototype);
+    user.firstName=firstName;
+    user.lastname=lastname;
+    user.country=country;
+    user.age=age;
+    return user;
+}
+
+createUser.prototype.about=function(){
+    return `${this.firstName} is ${this.age} years old.`;
+};
+createUser.prototype.is18 = function(){
+        return this.age >= 18;
+    };
+
+createUser.prototype.education=function(){
+        return ` your education from ${country}`;
+    };
+    
+const user03= creaatUser('Zaid','Saeed',27,'India');
+const user04= creaatUser('Bilal','Asad',23,'India');
+
+console.log(user03.about());
+console.log(user04.is18());
+
+
+    
+    // 🔴 prototype is a object / literals {} with free space jitna chaho function add karo
+    //  [[prototype]] or__proto__ is a referance type like Object.create(referance)
+    // p
