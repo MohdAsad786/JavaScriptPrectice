@@ -1,29 +1,29 @@
-const chai=[
-    {prodid:1,prodName:"milk",prodPrice:70},
-    {prodid:2,prodName:"Tea",prodPrice:55},
-    {prodid:3,prodName:"sugar",prodPrice:45},
-    {prodid:4,prodName:"water",prodPrice:20},
-    {prodid:5,prodName:"gas",prodPrice:100},
+const chai = [
+    { prodid: 1, prodName: "milk", prodPrice: 70 },
+    { prodid: 2, prodName: "Tea", prodPrice: 55 },
+    { prodid: 3, prodName: "sugar", prodPrice: 45 },
+    { prodid: 4, prodName: "water", prodPrice: 20 },
+    { prodid: 5, prodName: "gas", prodPrice: 100 },
 
 ]
 
 // const ammount=chai.reduce((totalPriceaccumalate,currentValue)=>{
-    // return totalPriceaccumalate+currentValue.prodPrice;
+// return totalPriceaccumalate+currentValue.prodPrice;
 // },0)
 // console.log(ammount);
 
-const checkamoountgreaterhai=chai.some(checkprice=>checkprice.prodPrice>555);
+const checkamoountgreaterhai = chai.some(checkprice => checkprice.prodPrice > 555);
 // console.log("is price greaterthen55: if yes return true o/w false in some metod: "+ checkamoountgreaterhai);
 
 // fill method it have two use
 //  first we can make array of same value
-const myArray=new Array(10).fill(0);
+const myArray = new Array(10).fill(0);
 // console.log(myArray);
 
 // 2nd is replace value in array
-alreadyArray=[1,2,3,4,5,6,7,8,9,0]
+alreadyArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 // fill(jis value sey fill kerna hai ,startindex,endindex)
-alreadyArray.fill(0,7,9);
+alreadyArray.fill(0, 7, 9);
 // console.log(alreadyArray)
 
 // splice method it do insert delete
@@ -92,8 +92,8 @@ const numbers = new Set();
 // this not add again in set set properperty violatation 
 // numbers.add(items);
 // 🔴array have diffrerent memory location array will add again
-numbers.add(['i1','i2','i3']);
-numbers.add(['i1','i2','i3']);
+numbers.add(['i1', 'i2', 'i3']);
+numbers.add(['i1', 'i2', 'i3']);
 // console.log(numbers);
 
 // if(numbers.has(1)){
@@ -165,20 +165,20 @@ numbers.add(['i1','i2','i3']);
 // 🔴 map return  array use return in callback function
 // 🔵it is called object literals {ismey key hamesha string mey hoti hai ya  phir symbol mey but map mey we suse any type of key string number objectsliterals array etc}
 
-const person=new Map();
-person.set('firstName','zeeshan')
-person.set('age','30')
-person.set('1','child')
+const person = new Map();
+person.set('firstName', 'zeeshan')
+person.set('age', '30')
+person.set('1', 'child')
 // console.log(person);
 
 // or you can set map  this way also 
-const pson = new Map([['firstname' ,'Mohd'],['age','30' ],['4','wives']]);
+const pson = new Map([['firstname', 'Mohd'], ['age', '30'], ['4', 'wives']]);
 // console.log(pson);
 
-for (const [key,value] of person) {
+for (const [key, value] of person) {
     // {console.log(key,value);
 
-    
+
 }
 
 
@@ -188,29 +188,29 @@ const person1 = {
 }
 
 const extraInfo = new Map();
-extraInfo.set(person1, {gender:'Male',age:25});
+extraInfo.set(person1, { gender: 'Male', age: 25 });
 console.log(person1.id);
 console.log(extraInfo.get(person1).gender);
 
 // clone using object assingn
 
-const obj={
-    key1:'value1',
-    key2:'value2'
+const obj = {
+    key1: 'value1',
+    key2: 'value2'
 }
 console.log(obj);
 //🟢 memory location same both data same we need clone the object
 // const obj1=obj;
 // how to clone
-const obj1={...obj}
-obj.key3='value';
+const obj1 = { ...obj }
+obj.key3 = 'value';
 console.log(obj);
 console.log(obj1);
 
 // 🟣optionl chaining when data currently nahi hai after some data will upcome then we confirm and say undefined aur data
 
-const user={
-    firstName:'Mohd',
+const user = {
+    firstName: 'Mohd',
     // address:{housenumber:'121'}
 }
 // console.log(user?.firstName);
@@ -221,22 +221,22 @@ const user={
 // function inside object
 
 // create your own method 
-function personInfo(){
+function personInfo() {
     // console.log(`person name is ${this.firstName} and age is ${this.age}`);
 }
 
 const person4 = {
-    firstName : "harsh",
+    firstName: "harsh",
     age: 8,
     about: personInfo
 }
 const person5 = {
-    firstName : "mohit",
+    firstName: "mohit",
     age: 18,
     about: personInfo
 }
 const person6 = {
-    firstName : "nitish",
+    firstName: "nitish",
     age: 17,
     about: personInfo
 }
@@ -251,16 +251,16 @@ const person6 = {
 
 
 const user1 = {
-    firstName : "Habib",
-    age: 8,   
-     about:function(hobby){
-        console.log(this.firstName, this.age,hobby);
-}
+    firstName: "Habib",
+    age: 8,
+    about: function (hobby) {
+        console.log(this.firstName, this.age, hobby);
+    }
 }
 const user2 = {
-    firstName : "Khabib",
+    firstName: "Khabib",
     age: 9,
-    
+
 }
 // 🔴 if u use function jo aapney define bhi na kiya ho uss object then we use call(ager iskey ander kuch nahi to undifend dega o/w usi ko call karega )
 
@@ -270,17 +270,17 @@ const user2 = {
 
 // 🟣 apply
 // 🟢internallyy apply bhi call ko use kerta hai parameter array mey leta hai
-function about(hobby, favretthing){
+function about(hobby, favretthing) {
     console.log(this.firstName, this.age, hobby, favretthing);
 }
 const user3 = {
-    firstName : "Zaid",
-    age: 8,   
+    firstName: "Zaid",
+    age: 8,
 }
 const user4 = {
-    firstName : "Haris",
+    firstName: "Haris",
     age: 9,
-    
+
 }
 
 // about.apply(user3, ["Thinking", "Quran-e-kareem"]);
@@ -294,11 +294,11 @@ funcofbind();
 
 
 // 🟣 Dont do that reference store honey per undefined dega 
-myfunc=user1.about;
+myfunc = user1.about;
 myfunc();
 
 // this way correct u can use bind method
-myfunc=user1.about.bind(user1,"hi");
+myfunc = user1.about.bind(user1, "hi");
 myfunc();
 
 // 🔴 Arrow function ka this nahi hota don't try with arrow functon always access this with function expression 
@@ -307,19 +307,19 @@ myfunc();
 
 
 const user7 = {
-    firstName : "harshit",
+    firstName: "harshit",
     age: 8,
-    about: function(){
+    about: function () {
         console.log(this.firstName, this.age);
-    }   
+    }
 }
 
 const user8 = {
-    firstName : "harshit",
+    firstName: "harshit",
     age: 8,
-    about(){
+    about() {
         console.log(this.firstName, this.age);
-    }   
+    }
 }
 
 
@@ -346,50 +346,50 @@ const objx = {
 //🔴 prototype    but it diffretnt from __proto__
 
 const objy = Object.create(objx);
- // {} object.Create(referance) it's giving two thing to you the firstone is that empty Object {} the secondone is creating chaining or connection
+// {} object.Create(referance) it's giving two thing to you the firstone is that empty Object {} the secondone is creating chaining or connection
 // there is one more way to create empty object
 objy.key3 = "value3";
 // obj2.key2 = "unique";
 console.log(objy);
 
-console.log(objy.__proto__); 
+console.log(objy.__proto__);
 //🔴__proto__ is a referance of objx
 
 // 🟣
 
 const userMethods = {
-    about : function(){
+    about: function () {
         return `${this.firstName} is ${this.age} years old.`;
     },
-    is18 : function(){
+    is18: function () {
         return this.age >= 18;
     },
-    education: function(){
+    education: function () {
         return ` your education from ${country}`;
     }
 }
 
-function creaatUser(firstName , lastname,age,country){
-    const user=Object.create(userMethods);
-    user.firstName=firstName;
-    user.lastname=lastname;
-    user.country=country;
-    user.age=age;
+function creaatUser(firstName, lastname, age, country) {
+    const user = Object.create(userMethods);
+    user.firstName = firstName;
+    user.lastname = lastname;
+    user.country = country;
+    user.age = age;
     return user;
 }
 
-const user01= creaatUser('Mohd','Asad',27,'India');
-const user02= creaatUser('Talib','Saeed',27,'India');
-console.log('about yourself' ,user01.about());
+const user01 = creaatUser('Mohd', 'Asad', 27, 'India');
+const user02 = creaatUser('Talib', 'Saeed', 27, 'India');
+console.log('about yourself', user01.about());
 console.log(user02);
 
 
 // 🟣 portotype
-function hello(){
+function hello() {
     console.log("hello world");
 }
 
-// javascript function ===> function  + object package of both
+// javascript function ===> (function  + object package) of both
 
 // console.log(hello.name);
 
@@ -413,34 +413,223 @@ function hello(){
 // };
 // console.log(hello.prototype.sing());
 
-function createUser(firstName , lastname,age,country){
-    const user=Object.create(prototype);
-    user.firstName=firstName;
-    user.lastname=lastname;
-    user.country=country;
-    user.age=age;
+function createUser(firstName, lastname, age, country) {
+    const user = Object.create(prototype);
+    user.firstName = firstName;
+    user.lastname = lastname;
+    user.country = country;
+    user.age = age;
     return user;
 }
 
-createUser.prototype.about=function(){
+createUser.prototype.about = function () {
     return `${this.firstName} is ${this.age} years old.`;
 };
-createUser.prototype.is18 = function(){
-        return this.age >= 18;
-    };
+createUser.prototype.is18 = function () {
+    return this.age >= 18;
+};
 
-createUser.prototype.education=function(){
-        return ` your education from ${country}`;
-    };
-    
-const user03= creaatUser('Zaid','Saeed',27,'India');
-const user04= creaatUser('Bilal','Asad',23,'India');
+createUser.prototype.education = function () {
+    return ` your education from ${country}`;
+};
+
+const user03 = creaatUser('Zaid', 'Saeed', 27, 'India');
+const user04 = creaatUser('Bilal', 'Asad', 23, 'India');
 
 console.log(user03.about());
 console.log(user04.is18());
 
 
+
+// 🔴 prototype is a object / literals {} with free space jitna chaho function add karo
+//  [[prototype]] or__proto__ is a referance type like Object.create(referance)
+
+
+// 🟣 new keyword
+// new key word use kerney per jo relation chain ham ham manually bna rahey they Object.create(Prototype) wo autometically this keyword kareyga
+
+// ye kaam ker raha {}+method ko use kerney mey jo function key key ander nahi hai
+// prototype mey milta hai jo current function mey nahi hot 
+// [[prototype]]or__proto__ refrence variable hota hai job prototype tek rasai hasil krata hai
+
+// new keyword 3 kaam kerta 
+// 1.) this = {} empty object create kerta hai usey this key equal rakhta hai
+// 2.) return {}  2sra kaam empty object key ander sab cheez add kerta hai and return kerta hai
+// 3.) apney aap hi link crete kerta hai prototype mey
+
+// __proto__ 
+// official ecmascript document
+// [[prototype]]
+
+//it is called constructor function  because it create object for me issey capital letter sey likhtey hai
+// like createUser vs CreateUser
+function CreateUser(firstName, lastName, email, age, address) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
+    this.age = age;
+    this.address = address;
+}
+CreateUser.prototype.about = function () {
+    return `${this.firstName} is ${this.age} years old.`;
+};
+CreateUser.prototype.is18 = function () {
+    return this.age >= 18;
+}
+CreateUser.prototype.sing = function () {
+    return "la la la la ";
+}
+
+
+const userx = new CreateUser('harshit', 'vashsith', 'abc@gmail.com', 18, "my address");
+const usery = new CreateUser('harsh', 'vashsith', 'abc@gmail.com', 19, "my address");
+const userz = new CreateUser('mohit', 'vashsitha', 'abc@gmail.com', 17, "my address");
+console.log(userx);
+console.log(userx.is18());
+
+// 🔴 
+for(let key in user1){
+    // console.log(key);
+    // all key batyga jo iskey function key prototype mey hai wo bhi
+    if(user1.hasOwnProperty(key)){
+        console.log(key); // only constructor key 
+    }
+}
+
+// 🟣 class and inheritence or extend keyword 
+class Animal {
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
+    }
+
+    eat(){
+        return `${this.name} is eating`;
+    }
+
+    isSuperCute(){
+        return this.age <= 1;
+    }
+
+    isCute(){
+        return true;
+    }
+}
+
+class Dog extends Animal{
     
-    // 🔴 prototype is a object / literals {} with free space jitna chaho function add karo
-    //  [[prototype]] or__proto__ is a referance type like Object.create(referance)
-    // p
+} 
+
+const tommy = new Dog("tommy", 3);
+console.log(tommy);
+console.log(tommy.isCute());
+
+// 🟣 ager ham same naam sey sub class mey method bnatey hai to pehley wo leta hai this 
+// same method in subclass
+class Animal {
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
+    }
+
+    eat(){
+        return `${this.name} is eating`;
+    }
+
+    isSuperCute(){
+        return this.age <= 1;
+    }
+
+    isCute(){
+        return true;
+    }
+}
+
+class Dog extends Animal{
+    constructor(name, age, speed){
+        super(name,age);
+        this.speed = speed;
+    }
+
+    eat(){
+        return `Modified Eat : ${this.name} is eating`
+    }
+
+    run(){
+        return `${this.name} is running at ${this.speed}kmph`
+    }
+} 
+// object / instance  same thing
+// const tommy = new Dog("tommy", 3,45);
+// console.log(tommy.run());
+// console.log(tommy.eat());
+
+const animal1 = new Animal('sheru', 2);
+console.log(animal1.eat());
+
+// 🟣
+// get laganey per ek function ek property ki trah act kareyga  you dont have need method call m() simply m
+
+// getter and setters 
+class Person{
+    constructor(firstName, lastName, age){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
+    get fullName(){
+        return `${this.firstName} ${this.lastName}`
+    }
+    set fullName(fullName){
+        // split(" ")sey[Mohd,Asad]
+        const [firstName, lastName] = fullName.split(" "); //destructurin use ki 
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+}
+
+
+const personx = new Person("Mohd", "Ibraheem", 5);
+// console.log(person1.fullName()); get ki wajah sey error becuse it act like property
+// console.log(person1.fullName);
+// person1.fullName = "Mohd Asad";
+// console.log(person1);
+
+
+// 🟣static methods and properties
+class Person{
+    constructor(firstName, lastName, age){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
+    static classInfo(){
+        return 'this is person class';
+    }
+    static desc = "static property";
+    get fullName(){
+        return `${this.firstName} ${this.lastName}`
+    }
+    set fullName(fullName){
+        const [firstName, lastName] = fullName.split(" ");
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    eat(){
+        return `${this.firstName} is eating`;
+    }
+
+    isSuperCute(){
+        return this.age <= 1;
+    }
+
+    isCute(){
+        return true;
+    }
+}
+
+const persony = new Person("rehan", "haris", 8);
+// console.log(person1.eat());
+// const info = Person.classInfo();
+// console.log(person1.desc);
+// console.log(info);
