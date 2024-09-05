@@ -33,7 +33,54 @@ var myfunction=function(){
 
 // var ki hoisting hoti hai 
 // let and const ki bhi hoisting hoti hai
-console.log(checklethoisting); 
+// console.log(checklethoisting); 
 // yaha error hai but hoisting ho rahi hai uninitialize uncaught reffrece error
 // point jab tek variable uinitialize sey initialize honey  tek beech mey  temporal zone mey tha
-let checklethoisting='let ki bhi hoisting hoti hai'
+// let checklethoisting='let ki bhi hoisting hoti hai'
+
+
+// 🟢 function return function closure concept
+// 🔴 jab function kisi function sey return hota hai to uskey saath uskey data variable ko leker return hota 
+
+function outerFunction(){
+    function innerFunction(){
+        console.log("inside outer function ");
+        
+    }
+    return innerFunction;
+}
+const ans =outerFunction();
+ans();
+
+function printfullname(firstname,lastname){
+    function printName(){
+        console.log(firstname,lastname);
+        
+    }
+    return printName
+    // printname firstname lastnmae key saath return hoga
+}
+const ans1 = printfullname("Mohd","Asad");
+console.log(ans);
+ans1(); // ismey assign hai firstname lastname
+
+function func(){
+     let counter=1;
+     return function(){
+        if(counter<=1){
+            console.log('clicked first time');
+            counter++;
+            
+        }else{
+            console.log('i have called already');
+            
+        }
+     }
+}
+const myfunc=func();
+myfunc()
+myfunc()
+const myfunc2=func();
+myfunc2();
+myfunc2();
+myfunc()
