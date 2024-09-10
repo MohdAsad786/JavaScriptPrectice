@@ -33,3 +33,17 @@ console.log(mainHeadingforct.innerText);
 console.log(mainHeadingforct.textContent);
 mainHeadingforct.textContent='we can change content by .textContent'
 console.log(mainHeadingforct.textContent);
+
+// if we wont perticuler class in mainheadingperticulerclass 
+//  div.thisclassspacethistag
+const mainheadingperticulerclass =document.querySelector('div.headline h2')
+console.log(mainheadingperticulerclass);
+console.log(mainheadingperticulerclass.style);
+
+// style is also a type of object and it is a property
+// but we can set css property with style
+mainheadingperticulerclass.style.color='red';
+// js mey ye -hifen error hai background-color
+// we use this backgroundColor camelCase
+mainheadingperticulerclass.style.backgroundColor='Green'
+mainheadingperticulerclass.style.border="3px solid yellow"
