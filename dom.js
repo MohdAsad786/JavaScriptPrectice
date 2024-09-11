@@ -1,7 +1,10 @@
 // select element using get element by id
     // ye method document object mey hota hai we can access ussing
+    // issey ham id ko access ker saktey jo object deta hai but wo element ki tarah dikhta hai
 console.log(document.getElementById('main-heading'));
+// if u want to see in real object form use dir
 console.dir(document.getElementById('main-heading'));
+// check object hai ya nahi
 console.log(typeof document.getElementById('main-heading') );
 
 const mainHeading=document.getElementById('main-heading');
@@ -23,12 +26,13 @@ console.log(navItems);
 // console mey nodelist milegi jismey sarey nav-iem hogey
 // ye list array ki tarah dikhti hai but array nahi hoti
 
-// we can change text by .textContent
-// textContent jo text dikh bhi nahi raha hota wo bhi deta hai
-// if u want only which text jo aap dekhna chahtey hai u can use innerText propperty
 const mainHeadingforct=document.getElementById('main-heading');
 console.log(mainHeadingforct); 
 console.log(mainHeadingforct.innerText);
+
+// we can change text by .textContent
+// textContent jo text dikh bhi nahi raha hota wo bhi deta hai
+// if u want only which text jo aap dekhna chahtey hai u can use innerText propperty
 
 console.log(mainHeadingforct.textContent);
 mainHeadingforct.textContent='we can change content by .textContent'
