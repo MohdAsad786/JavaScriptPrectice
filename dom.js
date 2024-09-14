@@ -50,4 +50,11 @@ mainheadingperticulerclass.style.color='red';
 // js mey ye -hifen error hai background-color
 // we use this backgroundColor camelCase
 mainheadingperticulerclass.style.backgroundColor='Green'
-mainheadingperticulerclass.style.border="3px solid yellow"
+mainheadingperticulerclass.style.border="3px solid yellow"  
+
+// get and set attribute
+const inputElement=document.querySelector(".form-todo input")
+console.log(inputElement);
+console.log(inputElement.getAttribute('type'));
+
+const link= document.querySelector
