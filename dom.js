@@ -57,4 +57,124 @@ const inputElement=document.querySelector(".form-todo input")
 console.log(inputElement);
 console.log(inputElement.getAttribute('type'));
 
-const link= document.querySelector
+const link= document.querySelector("a")
+console.log(link.getAttribute("href").slice(1));
+link.setAttribute("href","https://amazon.in")
+console.log(link.getAttribute("href"));
+
+
+// get multiple elements using get element by class name
+const navItemsmultiple= document.getElementsByClassName("nav-item");  
+// console.log(navItemsmultiple);  
+
+// array like object milega htmlcollection we can use only two property of array Hear 
+// length , index property
+// we can't use forEach method to iterate through HTMLCollection
+// simple for loop 
+// for of loop 
+// forEach 
+for(let i=0;i<navItemsmultiple.length;i++){
+    console.log(navItemsmultiple);
+    
+}
+console.log(navItemsmultiple[1]);   
+console.log(Array.isArray(navItemsmultiple));
+
+// get multiple elements using queryselectorAll() we can use this for all elements
+
+// get element by tagname
+let elebytagname=document.getElementsByTagName("a");
+console.log(elebytagname);
+// for(let i=0;i<=elebytagname.length;i++){
+//     const itemanchortag=elebytagname[i];
+//     itemanchortag.style.background="#fff";
+//     itemanchortag.style.color='green';
+//     itemanchortag.style.fontWeight='bold';
+
+// }
+
+
+// for of loop
+// for(let ele of elebytagname){
+//     ele.style.background="#fff";
+//        ele.style.color='green';
+//            ele.style.fontWeight='bold';
+    
+// }
+
+
+// we can use foreach also but we have to change in array
+elebytagname=Array.from(elebytagname);
+console.log(elebytagname);
+elebytagname.forEach(ele => {
+    ele.style.background="#fff";
+    ele.style.color='green';
+    ele.style.fontWeight='bold';
+        
+});
+
+// by hershit code 109.js file on github
+// get multiple elements using getElements by class name 
+// get multiple elements items using querySelectorAll
+// array like object ---> indexing, length property 
+// let navItems = document.getElementsByTagName("a"); // HTMLCollection
+// console.log(navItems);
+// we can't use forEach method to iterate through HTMLCollection
+// simple for loop 
+// for of loop 
+// forEach 
+
+// for(let i=0; i< navItems.length; i++){
+//     // console.log(navItems[i]);
+//     const navItem = navItems[i];
+//     navItem.style.backgroundColor = "#fff";
+//     navItem.style.color = "green";
+//     navItem.style.fontWeight = "bold";
+
+// }
+
+// for(let navItem of navItems){
+//     navItem.style.backgroundColor = "#fff";
+//     navItem.style.color = "green";
+//     navItem.style.fontWeight = "bold";
+// }
+
+// navItems = Array.from(navItems);
+// console.log(Array.isArray(navItems));
+// navItems.forEach((navItem)=>{
+//     navItem.style.backgroundColor = "#fff";
+//     navItem.style.color = "green";
+//     navItem.style.fontWeight = "bold";
+// })
+
+// console.log(Array.isArray(navItems));
+// const navItems = document.querySelectorAll(".nav-item"); // NodeList
+// console.log(navItems[1]);
+
+// let navItems = document.querySelectorAll("a");
+// navItems = Array.from(navItems);
+// yaha ham array key sarey method use ker saktey hai
+// console.log(Array.isArray(navItems));
+// simple for loop 
+// for of loop 
+// forEach 
+// for(let i=0; i< navItems.length; i++){
+    // console.log(navItems[i]);
+//     const navItem = navItems[i];
+//     navItem.style.backgroundColor = "#fff";
+//     navItem.style.color = "green";
+//     navItem.style.fontWeight = "bold";
+
+// }
+
+// for(let navItem of navItems){
+//     navItem.style.backgroundColor = "#fff";
+//     navItem.style.color = "green";
+//     navItem.style.fontWeight = "bold";
+// }
+// navItems.forEach((navItem)=>{
+//     navItem.style.backgroundColor = "#fff";
+//     navItem.style.color = "green";
+//     navItem.style.fontWeight = "bold";
+// })
+// console.log(navItems);
