@@ -178,3 +178,54 @@ elebytagname.forEach(ele => {
 //     navItem.style.fontWeight = "bold";
 // })
 // console.log(navItems);
+
+// innerHtML 
+const headline = document.querySelector(".headline");
+// console.log(headline.innerHTML);
+// headline.innerHTML = "<h1>Inner html changed </h1>";
+// headline.innerHTML += "<button class= \"btn\"> Learn More </button>" 
+// console.log(headline.innerHTML); 
+
+
+// Dom tree
+// const rootNode = document.getRootNode();
+// const htmlElementNode = rootNode.childNodes[0];
+// console.log(htmlElementNode.childNodes); NodeList(3) [head, text, body]
+// const headElementNode = htmlElementNode.childNodes[0];
+// const textNode1 = htmlElementNode.childNodes[1];
+// const bodyElementNode = htmlElementNode.childNodes[2];
+// console.log(headElementNode.childNodes);
+// sibling relation 
+
+// DOM.js mey dekho
+
+const section=document.querySelector('.section-todo')
+console.log(section);
+// for check class 
+console.log(section.classList);
+section.classList.add(".bg-dark");
+const ans=section.classList.contains('container')
+console.log(ans);
+section.classList.remove('container')
+const ans2=section.classList.contains('container')
+console.log(ans2);
+
+
+// hershit code 
+
+//class add remove contains toggle 
+// 
+
+// const sectionTodo = document.querySelector(".section-todo");
+// console.log(sectionTodo.classList);
+// sectionTodo.classList.add('bg-dark');
+// sectionTodo.classList.remove("container");
+// const ans = sectionTodo.classList.contains("container");
+// console.log(ans);
+// sectionTodo.classList.toggle("bg-dark");
+// sectionTodo.classList.toggle("bg-dark");
+const formTodo = document.querySelector(".form-todo");
+
+formTodo.classList.add("bg-dark");
+console.log(formTodo);
+
