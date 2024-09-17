@@ -229,3 +229,20 @@ const formTodo = document.querySelector(".form-todo");
 formTodo.classList.add("bg-dark");
 console.log(formTodo);
 
+// document.createElement()
+// append apend sey append hoga
+// prepend pre append hoga element
+// remove
+
+const newtodoitem=document.createElement('li');
+newtodoitem.textContent='teachstudent';
+const todolist =document.querySelector('.todo-list');
+todolist.append(newtodoitem); 
+todolist.prepend(newtodoitem);
+console.log(newtodoitem);
+
+// remove 
+const todo1=document.querySelector('.todo-list li');
+console.log(todo1);
+todo1.remove()
+console.log(todo1)
