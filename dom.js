@@ -228,7 +228,7 @@ const formTodo = document.querySelector(".form-todo");
 
 formTodo.classList.add("bg-dark");
 console.log(formTodo);
-
+// advice mostly developer use this method 
 // document.createElement()
 // append apend sey append hoga
 // prepend pre append hoga element
@@ -246,3 +246,123 @@ const todo1=document.querySelector('.todo-list li');
 console.log(todo1);
 todo1.remove()
 console.log(todo1)
+
+// 🔵clone nodes
+// const ul = document.querySelector(".todo-list");
+// const li = document.createElement("li");
+// li.textContent = "new todo";
+// const li2 = li.cloneNode(true);
+//🟢 true means yaha deep cloning hogi child node ko bhi copy kareyga 
+// li key saath .textContent ko bhi clone kareyga 
+// ul.append(li);
+// ul.prepend(li2);
+
+// 🔵 static list means no reflection node list deta hai aur jo add kiy hai wo reflect nahi kerta hai
+// live list getelementbysomething wala hamey htmlcollection dega jo baad wala bhi reflection dega
+// both use have adv and desadv
+// ye jyada memory leta(HTMLCollection)
+
+const ul = document.querySelector(".todo-list");
+const listItems = ul.getElementsByTagName("li");
+
+const sixthLi = document.createElement("li");
+sixthLi.textContent = "item 6";
+
+ul.append(sixthLi);
+console.log(listItems);
+
+// 🔵 height width dekhney key liye by js getBoundingClientRect()
+// how to get the dimension of element
+// height width 
+const sectionTodo = document.querySelector(".section-todo");
+const info = sectionTodo.getBoundingClientRect();
+console.log(info);
+
+// 🔵 intro to events
+// click event
+
+btn.addEventListener("click", ()=>{
+    console.log("arrow function !!!")
+});
+
+// this key uper discussion @6:20
+// arrow function key case mey this ki value ek level up hogi 
+// jaha ham log ker dakey means window function
+
+// this keyword
+const btn = document.querySelector(".btn-headline");
+// aur aisey waley mey jo method isko call karega 
+// btn set hogi yaha per this ki value
+btn.addEventListener("click",function(){
+    console.log("you clicked me !!!!");
+    console.log("value of this")
+    console.log(this);
+});
+
+const allButtons = document.querySelectorAll(".my-buttons button");
+
+// we try this with three type of loop
+// yaha arrow function na ues kerna wo window dega 
+// 90%arrowfunction hi use karege
+
+// for(let button of allButtons){
+//     button.addEventListener("click", function(){
+//         console.log(this);
+//     })
+// }
+
+// for(let i = 0 ; i< allButtons.length; i++){
+//     allButtons[i].addEventListener("click", function(){
+//         console.log(this);
+//     })
+// }
+// allButtons.forEach(function(button){
+//     button.addEventListener("click", function(){
+//         console.log(this);
+//         });
+// })
+
+// 🔴🔴🔴
+// event object 
+// const firstButton = document.querySelector("#one");
+
+
+
+// firstButton.addEventListener("click", function(event){
+//     console.log(event);
+// })
+
+// jab bhi mai kisi bhi element pe event listener add hoga 
+// js Engine --- line by line execute karta hai 
+// browser ---- js Engine + extra features 
+// browser ----- js Engine + WebApi
+
+// jab browser ko pata chala ki user ne event perform kia 
+// jo hum listen kar rahe hai 
+// browser ----- 2 
+// 1.) callback function hai vo js Engine ko degi ...... 
+// 2.)  callback function ke sath browser jo event hua hai uski information bhi dega
+// ye info hamein ek object ke form mai milegi 
+
+
+const allButtonss = document.querySelectorAll(".my-buttons button");
+
+
+for(let button of allButtonss){
+    button.addEventListener("click",(e)=>{
+        console.log(e.currentTarget);
+    })
+}
+
+// 🔵🟢task to change color
+// little practice with click event
+const allButtonsss= document.querySelectorAll(".my-buttons button")
+// console.log(allButtons.length);
+
+allButtonsss.forEach(button =>{
+    button.addEventListener("click", (e)=>{
+        // console.log(e.target);
+        e.target.style.backgroundColor = "yellow";
+        e.target.style.color = "#333";
+    })
+})
